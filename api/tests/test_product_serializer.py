@@ -1,12 +1,10 @@
 import pytest
 
 from api.serializers import ProductSerializer
-from api.models import Product
 
 
 @pytest.mark.django_db
 def test_product_serializer():
-
     # Criando o dict que será passado no atributo 'data' como referência pros testes.
     data = {
         "title": "Teste serializer",
@@ -38,4 +36,3 @@ def test_product_serializer():
     assert serialized_data["title"] == data["title"]
     assert serialized_data["description"] == data["description"]
     assert serialized_data["price"] == data["price"]
-    
